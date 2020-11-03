@@ -2,15 +2,13 @@
 
 {% block content %}
     {% for task in Tasks %}
-        {% if task.is_complete == False %}
+        {% if task.is_completed == False %}
             <div class="tasks {% if task.is_important %}highlight{% endif %}">
-                <h1 class="general-description">{{task.general_description}}</h1>
-                {% if task.detailed_description %}
-                <p class="detailed-description">{{task.detailed_description}}</p>
-                {% endif %}
-                <p class="time-stamp">{{task.time_stamp}}</p>
-                <p class="author">{{task.author}}</p>
-                <p class="expertise">{{task.expertise}}</p>
+                <h1 class="general-description">Description: {{task.general_description}}</h1>
+                {% if task.detailed_description %} <p class="detailed-description">Detailed Description: {{task.detailed_description}}</p> {% endif %}
+                <p class="time-stamp">Time: {{task.time_stamp}}</p>
+                <p class="author">Author: {{task.author}}</p>
+                {% if task.expertise %}<p class="expertise">Expertise: {{task.expertise}}</p>{% endif %}
             </div>
         {% endif %}
     {% endfor %}
