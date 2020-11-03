@@ -1,5 +1,19 @@
 {% extends 'task_manager/base.html' %}
 
 {% block content %}
-<h1>This is the main page</h1>
+    {% for task in Tasks %}
+        {% if task.is_complete == False %}
+            <div class="tasks {% if task.is_important %}highlight{% endif %}">
+                <h1 class="general-description">{{task.general_description}}</h1>
+                {% if task.detailed_description %}
+                <p class="detailed-description">{{task.detailed_description}}</p>
+                {% endif %}
+                <p class="time-stamp">{{task.time_stamp}}</p>
+                <p class="author">{{task.author}}</p>
+                <p class="expertise">{{task.expertise}}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
 {% endblock %}
+
+
