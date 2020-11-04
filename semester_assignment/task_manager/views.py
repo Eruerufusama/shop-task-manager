@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.views.generic import ListView
+from .models import Posts
 
 tasks = [
     {
@@ -23,12 +25,15 @@ tasks = [
     },
 ]
 
+#class PostListView(ListView):
+    
+
 def create_post(request):
     return render(request, 'task_manager/create_post.html')
 
 def main_page(request):
     context = {
-        "Tasks": tasks
+        "Tasks": Posts.objects.all()
     }
 
     return render(request, 'task_manager/main_page.html', context)
