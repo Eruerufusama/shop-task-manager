@@ -1,7 +1,7 @@
 {% extends 'task_manager/base.html' %}
 
 {% block content %}
-    {% for task in Tasks %}
+    {% for task in tasks %}
         {% if task.is_completed == False %}
             <div class="tasks {% if task.is_important %}highlight{% endif %}">
 
@@ -10,7 +10,7 @@
                 {% if task.detailed_description %}
                 <p class="">{{task.detailed_description}}</p> {% endif %}
 
-                <p class="">{{task.time_stamp}}</p>
+                <p class="">{{task.datetime_posted}}</p>
                 <p class="">{{task.author}}</p>
 
                 {% if task.expertise %}
