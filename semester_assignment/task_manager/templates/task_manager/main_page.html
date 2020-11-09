@@ -1,20 +1,21 @@
 {% extends 'task_manager/base.html' %}
 
 {% block content %}
-    {% for task in tasks %}
-        {% if task.is_completed == False %}
-
-            <div class="post {% if task.is_important %} highlight {% endif %}">
-                <div class="content post-element">
-                    <h1 class="header">{{task.general_description}}</h1>
-                    <p class="author small-element">Author: {{task.author}}</p>
-                    <p class="time-stamp small-element">Posted: {{task.datetime_posted}}</p>
-                    <p class="expertise small-element">Requirements: {{task.expertise}}</p>
+    <div class="posts">
+        {% for task in tasks %}
+            {% if task.is_completed == False %}
+                <div class="post {% if task.is_important %} important {% endif %}">
+                    <div class="content post-element">
+                        <h1 class="header">{{task.general_description}}</h1>
+                        <p class="author small-element">Author: {{task.author}}</p>
+                        <p class="time-stamp small-element">{{task.datetime_posted|timesince}} ago</p>
+                        <p class="expertise small-element">Requirements: {{task.expertise}}</p>
+                    </div>
+                    <button class="activate post-element">Mark as active</button>
                 </div>
-                <button class="activate post-element">Mark as active</button>
-            </div>
-        {% endif %}
-    {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </div>
 {% endblock %}
 
 

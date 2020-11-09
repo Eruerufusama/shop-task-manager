@@ -5,10 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static "task_manager/style.css" %}"">
+    <link rel="stylesheet" type="text/css" href="{% static "task_manager/style.css" %}">
     <title>Document</title>
 </head>
 <body>
+    <div class="banner">
+        <img class="logo" src="https://i.imgur.com/T7QldLU.png" alt="">
+        <h1 class="header-title">Task Manager</h1>
+    </div>
     {% block content %}
     {% endblock %}
 </body>

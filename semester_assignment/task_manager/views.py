@@ -17,7 +17,7 @@ def create_post(request):
 
 def main_page(request):
     context = {
-        "tasks": Posts.objects.all()
+        "tasks": Posts.objects.all(),
     }
 
     return render(request, 'task_manager/main_page.html', context)
