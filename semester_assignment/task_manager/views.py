@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
-from django.contrib.auth.forms import UserCreationForm
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Posts
 
 # With this posts will be ordered from oldest to newest from the bottom to the top. Like a twitter feed.
@@ -11,6 +10,16 @@ class PostListView(ListView):
     ordering = ['-datetime_posted']
 
 
+class PostDetailView(DetailView):
+    model = Posts
+    
+
+
+class PostCreateView(CreateView):
+    model = Posts
+    fields = ['general_description', 'is_important']
+    
+    
 
 def create_post(request):
     return render(request, 'task_manager/create_post.html')

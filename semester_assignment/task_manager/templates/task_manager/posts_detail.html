@@ -1,0 +1,18 @@
+{% extends 'task_manager/base.html' %}
+
+{% block content %}   
+  <div class="tasks {% if task.is_important %}highlight{% endif %}">
+
+       <h1 class="">{{object.general_description}}</h1>
+
+       {% if object.detailed_description %}
+      <p class="">{{object.detailed_description}}</p> {% endif %}
+
+       <p class="">{{object.datetime_posted}}</p>
+      <p class="">{{object.author}}</p>
+
+      {% if object.expertise %}
+     <p class="">{{object.expertise}}</p>{% endif %}
+
+    </div>
+{% endblock %}
