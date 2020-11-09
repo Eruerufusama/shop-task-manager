@@ -1,6 +1,4 @@
 from django.db.models import *
-
-
 from django.utils import timezone
 from django.contrib.auth.models import User
 
@@ -14,9 +12,9 @@ class Posts(Model):
     expertise = TextField()
     author = ForeignKey(User, on_delete=CASCADE)
     
-
     def __str__(self):
         return self.general_description
+
 
 class Users(Model):
     name = TextField()
@@ -28,11 +26,8 @@ class Users(Model):
         return self.name
 
 
-
 class UserGroup(Model):
     group_details = TextField()
-    
-
 
     def __str__(self):
         return self.group_details

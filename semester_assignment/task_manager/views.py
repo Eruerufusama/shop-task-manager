@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import ListView
+from django.contrib.auth.forms import UserCreationForm
 from .models import Posts
 
-class PostListView(ListView):#With this posts will be ordered from oldest to newest from the bottom to the top. Like a twitter feed.
+# With this posts will be ordered from oldest to newest from the bottom to the top. Like a twitter feed.
+class PostListView(ListView):
     model = Posts
     template_name = 'task_manager/main_page.html'
     context_object_name = 'tasks'
