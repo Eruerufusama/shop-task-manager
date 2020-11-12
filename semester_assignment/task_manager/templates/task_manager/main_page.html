@@ -12,7 +12,7 @@
                             <p class="time-stamp small-element">{{task.datetime_posted|timesince}} ago</p>
                             <p class="expertise small-element">Requirements: {{task.expertise}}</p>
                         </div>
-                        <button class="activate post-element" href="{% url 'posts-detail' task.id %}">Mark as active</button>
+                        <a href="{% url 'posts-detail' task.id %}"><button class="activate post-element">Mark as active</button></a>
                     </div>
                 {% endif %}
             {% endfor %}
