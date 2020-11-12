@@ -4,17 +4,24 @@
     {% if tasks %}
         <div class="posts">
             {% for task in tasks %}
-                {% if task.is_completed == False %}
-                    <div class="post {% if task.is_important %} important {% endif %}">
-                        <div class="content post-element">
-                            <h1 class="header">{{task.general_description}}</h1>
-                            <p class="author small-element">Author: {{task.author}}</p>
-                            <p class="time-stamp small-element">{{task.datetime_posted|timesince}} ago</p>
-                            <p class="expertise small-element">Requirements: {{task.expertise}}</p>
+            <div class="post {% if task.is_important %} is-important {% endif %} {% if task.is_inprogress %} is-in-progress {% endif %}">
+                <img src="{% if task.is_inprogress %}https://i.imgur.com/ZCb8SW6.png
+                {% else %}https://i.imgur.com/iDrw6gO.png{% endif %}" class="status">
+                <article class="media content-section">
+                    <div class="media-body">
+                        <div class="article-metadata">
+                        <a class="mr-2" href="#">{{ task.author }}</a>
+                        <small class="text-muted">{{ task.datetime_posted|timesince }} ago.</small>
                         </div>
+<<<<<<< HEAD
                         <a href="{% url 'posts-detail' task.id %}"><button class="activate post-element">Mark as active</button></a>
+=======
+                        <p class="article-content" href="#">{{ task.general_description }}</p>
+>>>>>>> a26885569c5c75363878bfb2d6199a608b2ad26d
                     </div>
-                {% endif %}
+                </article>
+                <button >{% if task.is_inprogress %}In Progress{% else %}Activate{% endif %}</button>
+            </div>
             {% endfor %}
         </div>
     {% endif %}

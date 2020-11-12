@@ -1,0 +1,62 @@
+:root {
+    
+}
+
+/* Base-styling */
+body {
+    background-color: #2b2b2b;
+    color: #e8e8e8;
+}
+
+/* Header-styling */
+.banner {
+    background-color: #e8e8e8;
+    color: #2b2b2b;
+}
+
+.banner > div {
+    display: flex;
+    align-items: center;
+    
+}
+.banner > div > .header-title {
+    font-size: 5vw;
+    padding: 1  vw;
+}
+
+.banner > div > img {
+    width: 32px;
+    margin: 0vw 5vw;
+}
+
+/* Post-styling */
+.post {
+    display: flex;
+}
+.post > * {
+    flex-grow: 1;
+}
+.post > button {
+    max-width: 20vw;
+    background-color: inherit;
+    border: inherit;
+    color: lawngreen;
+}
+.post > .status {
+    display: block;
+    align-self: center;
+    padding: 2vw;
+    max-width: 12vw;
+}
+
+.dim {
+    color: #646464;
+}
+
+.is-important {
+    background-color: #3f3f3f;
+}
+
+.is-active {
+    color: grey;
+}

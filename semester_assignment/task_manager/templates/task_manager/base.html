@@ -5,14 +5,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static "task_manager/style.css" %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'task_manager/main.css' %}">
+
     <title>Document</title>
 </head>
 <body>
     <div class="banner">
-        <img class="logo" src="https://i.imgur.com/T7QldLU.png" alt="">
-        <h1 class="header-title">Task Manager</h1>
+        <div>
+            <img class="logo" src="https://i.imgur.com/T7QldLU.png">
+            <h2 class="header-title">Task Manager</h2>
+        </div>
     </div>
+<<<<<<< HEAD
     {% if messages %}
         {% for message in messages %}
             <div class="alert alert-{{ message.tags }}">
@@ -20,6 +25,9 @@
             </div>
         {% endfor %}
     {% endif %}
+=======
+
+>>>>>>> a26885569c5c75363878bfb2d6199a608b2ad26d
     {% block content %}
     {% endblock %}
 </body>
