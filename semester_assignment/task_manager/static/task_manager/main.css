@@ -21,7 +21,7 @@ body {
 }
 .banner > div > .header-title {
     font-size: 5vw;
-    padding: 1  vw;
+    padding: 1vw;
 }
 
 .banner > div > img {
@@ -46,7 +46,7 @@ body {
     display: block;
     align-self: center;
     padding: 2vw;
-    max-width: 12vw;
+    max-width: 32px;
 }
 
 .dim {

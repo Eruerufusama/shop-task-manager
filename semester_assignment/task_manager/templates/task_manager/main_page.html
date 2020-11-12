@@ -13,10 +13,10 @@
                         <a class="mr-2" href="#">{{ task.author }}</a>
                         <small class="text-muted">{{ task.datetime_posted|timesince }} ago.</small>
                         </div>
-                        <p class="article-content" href="#">{{ task.general_description }}</p>
+                        <p class="article-content">{{ task.general_description }}</p>
                     </div>
                 </article>
-                <button >{% if task.is_inprogress %}In Progress{% else %}Activate{% endif %}</button>
+                <button onclick="window.location.href='{% url 'posts-detail' task.id %}';">{% if task.is_inprogress %}In Progress{% else %}Activate{% endif %}</button>
             </div>
             {% endfor %}
         </div>
