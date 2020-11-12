@@ -5,7 +5,7 @@
         <div class="posts">
             {% for task in tasks %}
                 {% if task.is_completed == False %}
-                    <div class="post {% if task.is_important %} important {% endif %}">
+                    <div class="post {% if task.is_important %} important {% endif %} {% if task.is_active %} is-active {% endif %}">
                         <div class="content post-element">
                             <h1 class="header">{{task.general_description}}</h1>
                             <p class="author small-element">Author: {{task.author}}</p>

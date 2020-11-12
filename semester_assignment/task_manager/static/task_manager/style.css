@@ -1,3 +1,8 @@
+
+html {
+    padding: 0;
+    margin: 0;
+}
 * {
     margin: 0;
     padding: 0;
@@ -7,18 +12,19 @@
     background-color: inherit;
 }
 
-body {
-    background-image: linear-gradient(#ffffff, #b6b6b6);
+.banner {
+    background-image: linear-gradient(#ffffff, #e7ebf0);
+    font-size: 2vw;
+    color: #7e7e7e;
 }
 
-.banner {
+
+.banner > div {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 1vw;
     text-align: left;
     padding: 1vw;
-    font-size: 2vw;
 }
 
 .logo {
@@ -31,22 +37,26 @@ body {
     padding: 0 4vw;
 }
 
+.post {
+    display:flex;
+    flex-direction: row;
+    padding: 1vw;
+    background-image: linear-gradient(-45deg, #ffffff, #f0f0f0);
+}
+
 .important {
     border-left: 10px solid #4e77ff;
-    background-image: linear-gradient(90deg, #4e77ff70, #c8d5ff00);
+    background-image: linear-gradient(90deg, #d1e1ff, #00000000);
+}
+
+.is-active {
+    color: #b8b8b8;
 }
 
 .header {
     font-size: 4.5vw;
     padding: 2vw;
     text-align: left;
-}
-
-.post {
-    display:flex;
-    flex-direction: row;
-    padding: 1vw;
-    /* border-top: 2px solid gainsboro; */
 }
 
 .post-element {
@@ -87,4 +97,8 @@ body {
     max-width: 20vw;
     font-size: 4.2vw;
     flex-shrink: 2;
+}
+
+.posts {
+    background: transparent;
 }
