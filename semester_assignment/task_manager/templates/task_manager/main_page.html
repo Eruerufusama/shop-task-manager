@@ -4,20 +4,22 @@
     {% if tasks %}
         <div class="posts">
             {% for task in tasks %}
-            <div class="post {% if task.is_important %} is-important {% endif %} {% if task.is_inprogress %} is-in-progress {% endif %}">
-                <img src="{% if task.is_inprogress %}https://i.imgur.com/ZCb8SW6.png
-                {% else %}https://i.imgur.com/iDrw6gO.png{% endif %}" class="status">
-                <article class="media content-section">
-                    <div class="media-body">
-                        <div class="article-metadata">
-                        <a class="mr-2" href="#">{{ task.author }}</a>
-                        <small class="text-muted">{{ task.datetime_posted|timesince }} ago.</small>
+                <div class="post {% if task.is_important %} is-important {% endif %} {% if task.is_inprogress %} is-in-progress {% endif %}">
+                    <img src="{% if task.is_inprogress %}https://i.imgur.com/ZCb8SW6.png
+                    {% else %}https://i.imgur.com/iDrw6gO.png{% endif %}" class="status">
+                    <article class="media content-section">
+                        <div class="media-body">
+                            <div class="article-metadata">
+                                <a class="mr-2" href="#">{{ task.author }}</a>
+                                <small class="text-muted">{{ task.datetime_posted|timesince }} ago.</small>
+                            </div>
+                            <p class="article-content">{{ task.general_description }}</p>
                         </div>
-                        <p class="article-content">{{ task.general_description }}</p>
-                    </div>
-                </article>
-                <button onclick="window.location.href='{% url 'posts-detail' task.id %}';">{% if task.is_inprogress %}In Progress{% else %}Activate{% endif %}</button>
-            </div>
+                    </article>
+                    <button onclick="window.location.href='{% url 'posts-detail' task.id %}';">
+                    {% if task.is_inprogress %}In Progress{% else %}Activate{% endif %}
+                    </button>
+                </div>
             {% endfor %}
         </div>
     {% endif %}

@@ -60,3 +60,17 @@ body {
 .is-active {
     color: grey;
 }
+
+/* Individual post styling */
+
+.notice {
+    text-align: center;
+    padding: 1vw;
+    margin: 1vw 12vw;
+    flex-grow: 1;
+}
+
+.metadata {
+    display: flex;
+    align-items: center;
+}
